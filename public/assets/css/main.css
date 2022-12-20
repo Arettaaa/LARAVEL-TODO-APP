@@ -436,8 +436,86 @@ a :hover {
     color: #EBAD9D!important;
 }
 
-table, th, td {
-    border: 1px solid;
-  }
+.table {
+    margin: auto;
+    font-family: "Arial";
+    font-size: 12px;    
+ 
+}
+.table {
+    border-collapse: collapse;
+    font-size: 17px;
+}
+
+.table th, 
+.table td {
+    border-bottom: 2.5px solid #eff8ff;
+    border-left: 2.5px solid #eff8ff;
+    border-top: 2.5px solid #eff8ff;
+    padding: 9px 21px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+}
+.table th, 
+.table td:last-child {
+    border-right: 2.5px solid #eff8ff;
+}
+.table td:first-child {
+    border-top: 2.5px solid #eff8ff;
+}
+caption {
+    caption-side: top;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+ 
+/* Table Header */
+.table thead th {
+    background-color: #4D5FBA;
+    color: #FFFFFF;
+}
+ 
+/* Table Body */
+.table tbody td {
+    color: #FFF;
+}
+.table tbody tr:nth-child(odd) td {
+    background-color: #4D5FBA;
+}
+.table tbody tr:hover th,
+.table tbody tr:hover td {
+    background-color: #89BECF;
+    transition: all .2s;
+}
+ 
+/*Tabel Responsive 1*/
+.table-container {
+    overflow: auto;
+}
+
+h1 {
+    color: #89BECF;
+	text-align: center;
+	width: 100%;
+	background-color: #4D5FBA;
+	border-radius: 25px 25px 0 0;
+	color: #FFFFFF;
+	padding: 30px 0;
+	font-weight: 600;
+    font-size: 33px;
+	margin: 0;
+}
+
+.name{
+    color: #4D5FBA;
+	font-weight: 555;
+	font-size: 17px;
+	text-align: justify;
+    display: block;
+	margin: 30px auto;
+	width: 300px;
+	height: auto;
+}
 
 

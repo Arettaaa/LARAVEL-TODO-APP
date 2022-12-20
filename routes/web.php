@@ -22,6 +22,7 @@ Route::middleware('isLogin', 'CekRole:admin,user')->prefix('/todo')->name('todo.
     Route::get('/logout', [TodoController::class, 'logout'])->name('logout');
     Route::get('/profile/upload', [TodoController::class, 'profileUpload'])->name('profileUpload');
     Route::patch('/profile/change', [TodoController::class, 'changeProfile'])->name('changeProfile');
+    Route::patch('/upload', [TodoController::class, 'profileUpload'])->name('profileUpload'); 
 });
 
 // todo

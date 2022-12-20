@@ -30,7 +30,8 @@
         
         @if (Auth::user()->role == 'admin')
         <div class="d-flex justify-content-center mt-5">
-        <a href="todo/user" class="btn btn-primary">
+        <a href="todo/user" class="btn btn-primary" style="display: inline-block; outline: 0; cursor: pointer; border: 1px solid #FFFF;
+        text-align: center; color: #FFFF; background: #4D5FBA; border-radius: 4px; font-weight: 500; font-size: 18px;">
         Lihat data
         </a>
         </div>

@@ -1,10 +1,11 @@
 @extends('layout')
 
 @section('content')
-<table>
+<div class = "table-container">
+<table class = "table">
 <thead>
 <tr>
-<td>Nama</td>
+<td>Name</td>
 <td>Username</td>
 <td>Email</td>
 <td>Created at</td>
@@ -21,4 +22,5 @@
 @endforeach
 </tbody>
 </table>
+</div>
 @endsection
