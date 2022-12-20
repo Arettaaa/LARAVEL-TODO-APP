@@ -436,4 +436,8 @@ a :hover {
     color: #EBAD9D!important;
 }
 
+table, th, td {
+    border: 1px solid;
+  }
+
 

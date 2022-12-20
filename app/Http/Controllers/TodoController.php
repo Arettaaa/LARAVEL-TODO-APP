@@ -43,6 +43,7 @@ class TodoController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'user',
         ]);
         // apabila berhasil, bkl diarahin ke hlmn login dengan pesan success
         return redirect('/')->with('success', 'berhasil membuat akun!');
@@ -171,7 +172,7 @@ class TodoController extends Controller
             Todo::where('id', $id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
-                'date' => $request->date,
+                'date'  => $request->date,
                 'status' => 0,
                 'user_id' => Auth::user()->id,
             ]);
@@ -192,4 +193,20 @@ class TodoController extends Controller
         //menghapus data dari database
 }
 
+public function profile(){
+    return view('dashboard.profile');
+}
+
+public function user(){
+     $user = User::all();
+     return view('dashboard.user', compact('user'));
+}
+
+public function error(){
+    return view('dashboard.error');
+}
+
+public function profileUpload(){
+    return view('dashboard.upload');
+}
 }

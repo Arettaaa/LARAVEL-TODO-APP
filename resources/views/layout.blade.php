@@ -25,6 +25,9 @@
                         <div class="nav-user-info">
                             <p class="mb-0 nav-user-name">{{ Auth::user()->name }}</p>
                         </div>
+                         <a class="dropdown-item" href="/profile">
+                            <i class="fas fa-user mr-2"></i>Profile
+                        </a>
                         <a class="dropdown-item" href="/logout">
                             <i class="fas fa-power-off mr-2"></i>Logout
                         </a>

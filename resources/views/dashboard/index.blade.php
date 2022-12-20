@@ -27,6 +27,15 @@
                 {{ Session::get('successUp') }}
             </div>
         @endif
+        
+        @if (Auth::user()->role == 'admin')
+        <div class="d-flex justify-content-center mt-5">
+        <a href="todo/user" class="btn btn-primary">
+        Lihat data
+        </a>
+        </div>
+        @else
+        
 
         <div class="d-flex align-items-start justify-content-between">
             <div class="d-flex flex-column">
@@ -88,7 +97,10 @@
             </div>
     
             @endforeach
+        
     
         </div>
+    @endif
     </div>
+
 @endsection

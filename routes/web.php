@@ -12,10 +12,20 @@ Route::middleware('isGuest')->group(function () {
 });
 
 Route::get('/logout', [TodoController::class, 'logout'])->name('logout');
+Route::get('/user', [TodoController::class, 'user'])->name('user');
+Route::get('/profile', [TodoController::class, 'profile'])->name('profile');
+
+
+Route::middleware('isLogin', 'CekRole:admin,user')->prefix('/todo')->name('todo.')->group(function () {
+    Route::get('/', [TodoController::class, 'index'])->name('index');
+    Route::get('/profile', [TodoController::class, 'profile'])->name('profile');
+    Route::get('/logout', [TodoController::class, 'logout'])->name('logout');
+    Route::get('/profile/upload', [TodoController::class, 'profileUpload'])->name('profileUpload');
+    Route::patch('/profile/change', [TodoController::class, 'changeProfile'])->name('changeProfile');
+});
 
 // todo
-Route::middleware('isLogin')->prefix('/todo')->name('todo.')->group(function () {
-    Route::get('/', [TodoController::class, 'index'])->name('index');
+Route::middleware('isLogin', 'CekRole:user')->prefix('/todo')->name('todo.')->group(function () {
     Route::get('/complated', [TodoController::class, 'complated'])->name('complated');
     Route::get('/create', [TodoController::class, 'create'])->name('create');
     Route::post('/store', [TodoController::class, 'store'])->name('store');
@@ -24,3 +34,10 @@ Route::middleware('isLogin')->prefix('/todo')->name('todo.')->group(function () 
     Route::get('/delete/{id}', [TodoController::class, 'destroy'])->name('delete');
     Route::patch('/complated/{id}', [TodoController::class, 'updateComplated'])->name('update-complated');
 });
+
+Route::middleware('isLogin', 'CekRole:admin')->prefix('/todo')->name('todo.')->group(function () {
+    Route::get('/user', [TodoController::class, 'user'])->name('user');
+
+});
+
+Route::get('/error', [TodoController::class, 'error'])->name('error');
